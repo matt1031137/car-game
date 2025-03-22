@@ -7,6 +7,7 @@ import { Suspense, useState, useEffect } from 'react'
 import { Track } from "./Track";
 import { Ground } from "./Ground";
 import { Car } from "./Car";
+import Loader from "./Loader";
 
 function App() {
   const [thirdPerson, setThirdPerson] = useState(false);
@@ -28,7 +29,7 @@ function App() {
 
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Environment
         files={"./textures/envmap.hdr"}
         background={"both"}
